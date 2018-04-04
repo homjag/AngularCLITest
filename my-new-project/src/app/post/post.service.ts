@@ -7,6 +7,8 @@ import 'rxjs/add/operator/map';
 
 export class PostService {
 
+    _posts: Posts[] = [];
+
     constructor(private http: Http){}
 
     getService(){
@@ -14,6 +16,15 @@ export class PostService {
             .map(function(response){
                 return response.json();
             })
+    }
+
+    openDialog(post: Posts){    
+        const index = this._posts.findIndex(c => c.id === post.id);
+        this._posts[index] = post;
+    }
+
+    getAllposts(){
+        return this._posts;
     }
     
 }

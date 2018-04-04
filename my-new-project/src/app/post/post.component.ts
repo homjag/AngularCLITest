@@ -25,11 +25,10 @@ export class PostComponent implements OnInit {
     });
   }
 
-  openDialog(post: Posts) {
+  openDialog(id:number) {
+    const post = this.postService.getAllposts().find(c => c.id === id);
     this.dialog.open(PopupComponent, {
-      data: {
-        userId: 1
-      }
+      data: {post}
     });
   }
 }
