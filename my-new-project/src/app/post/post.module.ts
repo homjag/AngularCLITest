@@ -1,105 +1,26 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NgModule } from '@angular/core';
+import { HttpModule } from '@angular/http';
+import { MatCardModule, MatDialogModule, MatToolbarModule, MatIconModule } from '@angular/material';
 
 import { PostComponent } from './post.component';
-import { PopupComponent } from './popup/popup.component';
 import { PostService } from './post.service';
-
-
-import {CdkTableModule} from '@angular/cdk/table';
-import {HttpClientModule} from '@angular/common/http';
-import {NgModule} from '@angular/core';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {HttpModule} from '@angular/http';
-import {
-  MatAutocompleteModule,
-  MatButtonModule,
-  MatButtonToggleModule,
-  MatCardModule,
-  MatCheckboxModule,
-  MatChipsModule,
-  MatDatepickerModule,
-  MatDialogModule,
-  MatDividerModule,
-  MatExpansionModule,
-  MatGridListModule,
-  MatIconModule,
-  MatInputModule,
-  MatListModule,
-  MatMenuModule,
-  MatNativeDateModule,
-  MatPaginatorModule,
-  MatProgressBarModule,
-  MatProgressSpinnerModule,
-  MatRadioModule,
-  MatRippleModule,
-  MatSelectModule,
-  MatSidenavModule,
-  MatSliderModule,
-  MatSlideToggleModule,
-  MatSnackBarModule,
-  MatSortModule,
-  MatStepperModule,
-  MatTableModule,
-  MatTabsModule,
-  MatToolbarModule,
-  MatTooltipModule,
-} from '@angular/material';
-
-
 
 @NgModule({
   declarations: [
-    PostComponent,
-    PopupComponent
-
+    PostComponent
   ],
   imports: [
     BrowserModule,
-    BrowserAnimationsModule,
-    FormsModule,
-    HttpModule,
-    HttpClientModule,
-    MatNativeDateModule,
-    ReactiveFormsModule,
-    MatAutocompleteModule,
-    MatButtonModule,
-    MatButtonToggleModule,
-    MatCardModule,
-    MatCheckboxModule,
-    MatChipsModule,
-    MatDatepickerModule,
     MatDialogModule,
-    MatDividerModule,
-    MatExpansionModule,
-    MatGridListModule,
+    MatCardModule,
     MatIconModule,
-    MatInputModule,
-    MatListModule,
-    MatMenuModule,
-    MatNativeDateModule,
-    MatPaginatorModule,
-    MatProgressBarModule,
-    MatProgressSpinnerModule,
-    MatRadioModule,
-    MatRippleModule,
-    MatSelectModule,
-    MatSidenavModule,
-    MatSliderModule,
-    MatSlideToggleModule,
-    MatSnackBarModule,
-    MatSortModule,
-    MatStepperModule,
-    MatTableModule,
-    MatTabsModule,
     MatToolbarModule,
-    MatTooltipModule,
+    BrowserAnimationsModule,
   ],
   providers: [ PostService ],
-  bootstrap: [
-        PostComponent,
-        PopupComponent
-    ],
+  bootstrap: [ PostComponent ],
   exports: [ PostComponent ]
 })
 export class PostModule { }

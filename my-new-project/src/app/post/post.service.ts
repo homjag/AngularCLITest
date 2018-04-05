@@ -1,13 +1,11 @@
 import { Injectable } from '@angular/core';
-import { Posts } from './post.interface';
+import { Posts } from '../models/post.interface';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
 
 @Injectable()
 
 export class PostService {
-
-    _posts: Posts[] = [];
 
     constructor(private http: Http){}
 
@@ -17,14 +15,4 @@ export class PostService {
                 return response.json();
             })
     }
-
-    openDialog(post: Posts){    
-        const index = this._posts.findIndex(c => c.id === post.id);
-        this._posts[index] = post;
-    }
-
-    getAllposts(){
-        return this._posts;
-    }
-    
 }
